@@ -1,0 +1,40 @@
+networks:
+  tup_analytics:
+    name: tup_analytics
+
+volumes:
+  postgresql_data:
+    name: tup_analytics_postgresql_data
+
+services:
+  db:
+    container_name: tup_analytics_db
+    image: postgres:16.1-alpine3.19
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    networks:
+      - tup_analytics
+    ports:
+      - ${DATABASE_PORT}:5432
+
+  worker:
+    container_name: tup_analytics_worker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tup_analytics_worker
+    environment:
+      - SSH_AUTH_SOCK=${SOCKET_FOLDER_PATH}
+      - STORAGE_TXT_FOLDER_PATH=${STORAGE_TXT_FOLDER_PATH}
+      - DATABASE_URL=${DATABASE_URL}
+    volumes:
+      - ${SOCKET_FOLDER_PATH}:${SSH_AUTH_SOCK}:ro
+      - ${GIT_CONFIG_FILE_PATH}:${HOME}/.gitconfig:ro
+      - ..:/workspace
+    networks:
+      - tup_analytics
+    command: sleep infinity

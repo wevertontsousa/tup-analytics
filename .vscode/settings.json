@@ -1,0 +1,17 @@
+{
+  "cSpell.language": "en",
+  "cSpell.overrides": [
+    {
+      "filename": "**/*.md",
+      "language": "pt_BR"
+    }
+  ],
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://biomejs.dev/": true
+  }
+}

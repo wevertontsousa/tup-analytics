@@ -1,0 +1,31 @@
+{
+  "name": "TUP Analytics",
+  "dockerComposeFile": ["docker-compose.yaml"],
+  "service": "worker",
+  "workspaceFolder": "/workspace",
+  "initializeCommand": "ln --symbolic --force ../.env .devcontainer/.env",
+  "remoteUser": "node",
+  "updateRemoteUserUID": false,
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "EditorConfig.EditorConfig",
+        "steoates.autoimport",
+        "quicktype.quicktype",
+        "christian-kohler.path-intellisense",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-pg",
+        "humao.rest-client",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "biomejs.biome",
+        "vitest.explorer",
+        "stringham.move-ts"
+        # , "Angular.ng-template"
+      ]
+    }
+  }
+}
