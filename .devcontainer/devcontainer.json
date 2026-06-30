@@ -24,7 +24,6 @@
         "biomejs.biome",
         "vitest.explorer",
         "stringham.move-ts"
-        # , "Angular.ng-template"
       ]
     }
   }
