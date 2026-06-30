@@ -1,0 +1,16 @@
+{
+  "name": "@tup_analytics/worker",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@tup_analytics/env": "*"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc"
+  }
+}
