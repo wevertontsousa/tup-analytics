@@ -18,4 +18,11 @@ jobs:
 
       - run: npm ci
       - run: npm run check
-      - run: npm test
+
+      - name: Execução de Testes
+        env:
+          NODE_ENV: ${{ vars.NODE_ENV }}
+          STRING_VARIABLE_TEST: ${{ vars.STRING_VARIABLE_TEST }}
+          NUMERIC_VARIABLE_TEST: ${{ vars.NUMERIC_VARIABLE_TEST }}
+          BOOLEAN_VARIABLE_TEST: ${{ vars.BOOLEAN_VARIABLE_TEST }}
+        run: npm test
