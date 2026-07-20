@@ -1,0 +1,19 @@
+{
+  "name": "TUP Analytics",
+  "dockerComposeFile": [
+    "docker-compose.yaml"
+  ],
+  "service": "worker_ssr",
+  "workspaceFolder": "/workspace",
+  "initializeCommand": "ln --symbolic --force ../.env .devcontainer/.env",
+  "remoteUser": "node",
+  "updateRemoteUserUID": false,
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  }
+}
