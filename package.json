@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "check": "biome check --write"
+  },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.4",
     "tsx": "^4.23.1",
     "typescript": "^7.0.2"
   }

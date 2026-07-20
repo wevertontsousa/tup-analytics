@@ -9,3 +9,7 @@ Thumbs.db
 
 # Dependências
 node_modules/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
